@@ -1,4 +1,4 @@
-1. Implement function for jwt token create and verify in every way
+1. Implement function for jwt token create in every way
 2. Implement function for jwt token verify in every way
 3. Implement function to generate OTP 
 4. Implement function to verify OTP 
