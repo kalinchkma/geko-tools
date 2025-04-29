@@ -19,7 +19,11 @@ func NewJwtBuilder(secret []byte) *jwtBuilder {
 }
 
 // Create token
-func (jb *jwtBuilder) CreateToken(key []byte, sigM jwt.SigningMethod) (string, error) {
-
-	return "", nil
+func (jb *jwtBuilder) CreateToken(sigM jwt.SigningMethod) (string, error) {
+	newToken := jwt.New(sigM)
+	signToken, err := newToken.SignedString(jb.secret)
+	if err != nil {
+		return "", err
+	}
+	return signToken, nil
 }
